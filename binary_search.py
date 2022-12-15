@@ -1,19 +1,22 @@
 def find(search_list, value):
     len_list = len(search_list)
     midpoint = int(len_list / 2)
+    beg = 0
+    end = -1
     
     while (len_list > 0):
-        if (search_list[0] > value) or (search_list[len_list - 1] < value):
+        if (search_list[beg] > value) or (search_list[end] < value):
             raise ValueError("value not in array")
 
         if (search_list[midpoint] > value):
-            len_list = midpoint
-            midpoint = int(len_list / 2)
+            end = midpoint
         elif (search_list[midpoint] < value):
-            len_list = len_list - midpoint
-            midpoint = int(len_list / 2)
+            beg = midpoint
         else:
             return midpoint
+
+        len_list = end - beg
+        midpoint = beg + int(len_list / 2)
         
         
         
