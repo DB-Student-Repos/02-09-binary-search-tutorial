@@ -4,6 +4,9 @@ def find(search_list, value):
     beg = 0
     end = len_list-1
     
+    if len_list == 0 :
+        raise ValueError("value not in array")
+    
     while (len_list >= 0):
         if (search_list[beg] > value) or (search_list[end] < value):
             raise ValueError("value not in array")
@@ -17,6 +20,8 @@ def find(search_list, value):
 
         len_list = end - beg
         midpoint = beg + int(len_list / 2)
+        
+   
         
         
         
