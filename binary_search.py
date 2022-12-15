@@ -9,7 +9,7 @@ def find(search_list, value):
         if (search_list[midpoint] > value):
             len_list = midpoint
             midpoint = int(len_list / 2)
-        else (search_list[midpoint] < value):
+        elif (search_list[midpoint] < value):
             len_list = len_list - midpoint
             midpoint = int(len_list / 2)
         else:
